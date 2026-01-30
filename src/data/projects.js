@@ -14,7 +14,7 @@ export const projects = [
         ],
         link: "https://github.com/Ritesh-iiitn/mental-health-nlp-classifier",
         github: "https://github.com/Ritesh-iiitn/mental-health-nlp-classifier",
-        image: "/assets/mentallogo.png",
+        image: "/assets/mental-logo.png",
     },
     {
         title: "FocusFlow – AI Productivity Platform",
