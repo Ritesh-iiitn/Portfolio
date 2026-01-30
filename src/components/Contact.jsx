@@ -1,10 +1,41 @@
 "use client";
 
+import { useState, useRef } from "react";
+import emailjs from '@emailjs/browser';
+
 import { motion } from "framer-motion";
 import { fadeIn } from "../animations/motionVariants";
 import { Mail, MapPin, Phone } from "lucide-react";
 
 const Contact = () => {
+    const form = useRef();
+    const [status, setStatus] = useState('');
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+        setStatus('sending');
+
+        emailjs
+            .sendForm(
+                'service_2z9xue9',
+                'template_vpa8p0s',
+                form.current,
+                {
+                    publicKey: 'TQhpMkDW61jI11crj',
+                }
+            )
+            .then(
+                () => {
+                    setStatus('success');
+                    e.target.reset();
+                },
+                (error) => {
+                    console.error('FAILED...', error.text);
+                    setStatus('error');
+                }
+            );
+    };
+
     return (
         <section id="contact" className="py-20 relative text-white">
             <div className="container mx-auto px-6">
@@ -69,14 +100,16 @@ const Contact = () => {
                         viewport={{ once: false, amount: 0.3 }}
                         className="bg-black/40 backdrop-blur-md p-8 rounded-2xl border border-slate-700/50"
                     >
-                        <form className="space-y-6">
+                        <form ref={form} onSubmit={sendEmail} className="space-y-6">
                             <div>
                                 <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-2">
                                     Name
                                 </label>
                                 <input
                                     type="text"
+                                    name="user_name"
                                     id="name"
+                                    required
                                     className="w-full bg-slate-900/50 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors"
                                     placeholder="Your Name"
                                 />
@@ -88,7 +121,9 @@ const Contact = () => {
                                 </label>
                                 <input
                                     type="email"
+                                    name="user_email"
                                     id="email"
+                                    required
                                     className="w-full bg-slate-900/50 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors"
                                     placeholder="your@email.com"
                                 />
@@ -99,8 +134,10 @@ const Contact = () => {
                                     Message
                                 </label>
                                 <textarea
+                                    name="message"
                                     id="message"
                                     rows={4}
+                                    required
                                     className="w-full bg-slate-900/50 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors"
                                     placeholder="Your message..."
                                 />
@@ -108,10 +145,17 @@ const Contact = () => {
 
                             <button
                                 type="submit"
-                                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-3 rounded-lg hover:opacity-90 transition-opacity"
+                                disabled={status === 'sending'}
+                                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-3 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50"
                             >
-                                Send Message
+                                {status === 'sending' ? 'Sending...' : 'Send Message'}
                             </button>
+                            {status === 'success' && (
+                                <p className="text-green-500 text-center text-sm">Message sent successfully!</p>
+                            )}
+                            {status === 'error' && (
+                                <p className="text-red-500 text-center text-sm">Failed to send message. Please try again.</p>
+                            )}
                         </form>
                     </motion.div>
                 </div>

@@ -41,6 +41,7 @@ const Projects = () => {
                                     src={project.image}
                                     alt={project.title}
                                     fill
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                     className="object-contain p-6 transition-transform duration-500 group-hover:scale-110"
                                 />
                             </div>

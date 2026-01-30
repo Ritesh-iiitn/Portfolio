@@ -56,6 +56,8 @@ const Hero = () => {
                             src="/profile.jpg"
                             alt="Profile"
                             fill
+                            priority
+                            sizes="(max-width: 768px) 100vw, 50vw"
                             className="object-cover rounded-full"
                         />
                     </div>
