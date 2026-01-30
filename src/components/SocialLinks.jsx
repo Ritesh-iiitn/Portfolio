@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { Github, Linkedin, Twitter, Mail, Code2, Terminal, Cpu } from "lucide-react";
 import Link from "next/link";
 
 const SocialLinks = () => {
@@ -22,6 +22,21 @@ const SocialLinks = () => {
             name: "Email",
             href: "mailto:riteshsingh3589@gmail.com",
             icon: <Mail size={24} />,
+        },
+        {
+            name: "LeetCode",
+            href: "https://leetcode.com/u/riteshsingh_42/",
+            icon: <Code2 size={24} />,
+        },
+        {
+            name: "CodeChef",
+            href: "https://www.codechef.com/users/ritesh_417",
+            icon: <Terminal size={24} />,
+        },
+        {
+            name: "Codeforces",
+            href: "https://codeforces.com/profile/Har_sh_singh",
+            icon: <Cpu size={24} />,
         },
     ];
 
