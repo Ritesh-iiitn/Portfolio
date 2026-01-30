@@ -37,10 +37,12 @@ const Projects = () => {
                             className="bg-black/50 backdrop-blur-md rounded-2xl overflow-hidden border border-slate-700/50 hover:border-purple-500/50 transition-all duration-300 group"
                         >
                             <div className="relative h-48 bg-slate-800 overflow-hidden">
-                                {/* Fallback for missing images */}
-                                <div className="absolute inset-0 bg-gradient-to-br from-purple-900/50 to-blue-900/50 flex items-center justify-center">
-                                    <span className="text-4xl">🚀</span>
-                                </div>
+                                <Image
+                                    src={project.image}
+                                    alt={project.title}
+                                    fill
+                                    className="object-contain p-6 transition-transform duration-500 group-hover:scale-110"
+                                />
                             </div>
 
                             <div className="p-6">

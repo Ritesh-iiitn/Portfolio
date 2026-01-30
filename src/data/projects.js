@@ -14,7 +14,7 @@ export const projects = [
         ],
         link: "https://github.com/Ritesh-iiitn/mental-health-nlp-classifier",
         github: "https://github.com/Ritesh-iiitn/mental-health-nlp-classifier",
-        image: "/assets/mental-health.png",
+        image: "/assets/mentallogo.png",
     },
     {
         title: "FocusFlow – AI Productivity Platform",
@@ -29,7 +29,7 @@ export const projects = [
         ],
         link: "https://github.com/Ritesh-iiitn/focusflow",
         github: "https://github.com/Ritesh-iiitn/focusflow",
-        image: "/assets/focusflow.png",
+        image: "/assets/taskmanagerlogo.png",
     },
     {
         title: "SiteSpark AI – Web Design Platform",
@@ -43,6 +43,6 @@ export const projects = [
         ],
         link: "https://github.com/Ritesh-iiitn/SiteSpark-AI",
         github: "https://github.com/Ritesh-iiitn/SiteSpark-AI",
-        image: "/assets/sitespark.png",
+        image: "/assets/sitesparklogo.png",
     },
 ];
