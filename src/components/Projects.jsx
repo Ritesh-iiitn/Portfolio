@@ -73,14 +73,16 @@ const Projects = () => {
                                     >
                                         <Github size={16} /> Code
                                     </a>
-                                    <a
-                                        href={project.link}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors"
-                                    >
-                                        {/* <ExternalLink size={16} /> Live Demo */}
-                                    </a>
+                                    {project.link !== project.github && (
+                                        <a
+                                            href={project.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors"
+                                        >
+                                            <ExternalLink size={16} /> Live Demo
+                                        </a>
+                                    )}
                                 </div>
                             </div>
                         </motion.div>

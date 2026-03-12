@@ -1,5 +1,21 @@
 export const projects = [
     {
+        title: "WealthWise",
+        description:
+            "Full-stack personal finance web application helping users understand their financial structure with real account data, secure bank integration, decision-based insights, and premium subscription billing.",
+        techStack: [
+            "Next.js",
+            "TypeScript",
+            "Tailwind CSS",
+            "Supabase",
+            "Plaid API",
+            "Stripe"
+        ],
+        link: "https://wealthwise-pi-two.vercel.app/",
+        github: "https://github.com/Ritesh-iiitn/wealthwise",
+        image: "/assets/download.png",
+    },
+    {
         title: "Mental Health Detection via Social Media",
         description:
             "NLP classification system analyzing 168K+ Reddit posts to detect 8 mental health conditions using ML and transformer models with 85% accuracy.",
