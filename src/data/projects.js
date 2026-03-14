@@ -16,6 +16,25 @@ export const projects = [
         image: "/assets/download.png",
     },
     {
+        title: "Personalized Feed System",
+        description:
+            "Scalable social media backend implementing personalized feed ranking using social graph filtering, engagement-based scoring, Redis caching, and JWT-secured REST APIs, simulating production-grade Instagram/Twitter feed architecture.",
+        techStack: [
+            "Node.js",
+            "Express",
+            "PostgreSQL",
+            "Docker",
+            "Redis",
+            "JWT",
+            "Postman",
+            "REST API",
+            "System Design"
+        ],
+        link: "https://github.com/Ritesh-iiitn/pulsefeed-backend",
+        github: "https://github.com/Ritesh-iiitn/pulsefeed-backend",
+        image: "/assets/hhh.png",   // <-- replace later
+    },
+    {
         title: "Mental Health Detection via Social Media",
         description:
             "NLP classification system analyzing 168K+ Reddit posts to detect 8 mental health conditions using ML and transformer models with 85% accuracy.",
